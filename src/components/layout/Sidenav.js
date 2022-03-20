@@ -13,11 +13,13 @@
 // import { useState } from "react";
 import { Menu, Button } from "antd";
 // import { NavLink, useLocation } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+// import logo from "../../assets/images/logo.png";
 import styled from "styled-components";
+import { useRouter } from 'next/router'
 
-const NavLink = styled.a``;
-const Link = styled.a``;
+import Link from 'next/link';
+
+const logo = "/assets/images/logo.png"
 
 function Sidenav({ color }) {
   const pathname = "";
@@ -174,7 +176,7 @@ function Sidenav({ color }) {
       <hr />
       <Menu theme="light" mode="inline">
         <Menu.Item key="1">
-          <NavLink to="/dashboard">
+          <NavLink href="/dashboard">
             <span
               className="icon"
               style={{
@@ -187,7 +189,7 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
-          <NavLink to="/tables">
+          <NavLink href="/transaction">
             <span
               className="icon"
               style={{
@@ -196,11 +198,11 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">Tables</span>
+            <span className="label">Мөнгөн шилжүүлэг</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="3">
-          <NavLink to="/billing">
+          <NavLink href="/billing">
             <span
               className="icon"
               style={{
@@ -213,7 +215,7 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="4">
-          <NavLink to="/rtl">
+          <NavLink href="/rtl">
             <span
               className="icon"
               style={{
@@ -229,7 +231,7 @@ function Sidenav({ color }) {
           Account Pages
         </Menu.Item>
         <Menu.Item key="6">
-          <NavLink to="/profile">
+          <NavLink href="/profile">
             <span
               className="icon"
               style={{
@@ -242,36 +244,36 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="7">
-          <NavLink to="/sign-in">
+          <NavLink href="/sign-in">
             <span className="icon">{signin}</span>
             <span className="label">Sign In</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="8">
-          <NavLink to="/sign-up">
+          <NavLink href="/sign-up">
             <span className="icon">{signup}</span>
             <span className="label">Sign Up</span>
           </NavLink>
         </Menu.Item>
       </Menu>
-      <div className="aside-footer">
-        <div
-          className="footer-box"
-          style={{
-            background: color,
-          }}
-        >
-          <span className="icon" style={{ color }}>
-            {dashboard}
-          </span>
-          <h6>Need Help?</h6>
-          <p>Please check our docs</p>
-          <Button type="primary" className="ant-btn-sm ant-btn-block">
-            DOCUMENTATION
-          </Button>
-        </div>
-      </div>
     </>
+  );
+}
+
+function NavLink({ href, exact, children, ...props }) {
+  const { pathname } = useRouter();
+  const isActive = exact ? pathname === href : pathname.startsWith(href);
+
+  if (isActive) {
+    props.className += ' active';
+  }
+
+  return (
+    <Link href={href}>
+      <a {...props}>
+        {children}
+      </a>
+    </Link>
   );
 }
 

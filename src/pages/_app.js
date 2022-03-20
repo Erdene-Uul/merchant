@@ -1,6 +1,6 @@
 import '../assets/styles/main.css';
 import '../assets/styles/responsive.css';
-import "antd/dist/antd.less";
+import "styles/less/index.less";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
