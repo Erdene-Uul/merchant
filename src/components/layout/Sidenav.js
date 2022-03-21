@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /*!
   =========================================================
   * Muse Ant Design Dashboard - v1.0.0
@@ -170,7 +171,7 @@ function Sidenav({ color }) {
   return (
     <>
       <div className="brand">
-        <img src={logo} alt="" />
+        <img src={logo} alt="asd" />
         <span>Muse Dashboard</span>
       </div>
       <hr />

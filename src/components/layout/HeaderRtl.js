@@ -94,7 +94,7 @@ const wifi = [
     <g
       id="Page-1"
       stroke="none"
-      stroke-width="1"
+      // stroke-width="1"
       fill="none"
       fillRule="evenodd"
     >
