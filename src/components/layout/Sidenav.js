@@ -172,7 +172,7 @@ function Sidenav({ color }) {
     <>
       <div className="brand">
         <img src={logo} alt="asd" />
-        <span>Muse Dashboard</span>
+        <span>Хяналтын самбар</span>
       </div>
       <hr />
       <Menu theme="light" mode="inline">
@@ -186,7 +186,7 @@ function Sidenav({ color }) {
             >
               {dashboard}
             </span>
-            <span className="label">Dashboard</span>
+            <span className="label">Самбар</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
@@ -212,7 +212,7 @@ function Sidenav({ color }) {
             >
               {billing}
             </span>
-            <span className="label">Billing</span>
+            <span className="label">Тооцоо</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="4">
@@ -242,18 +242,6 @@ function Sidenav({ color }) {
               {profile}
             </span>
             <span className="label">Profile</span>
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="7">
-          <NavLink href="/sign-in">
-            <span className="icon">{signin}</span>
-            <span className="label">Sign In</span>
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="8">
-          <NavLink href="/sign-up">
-            <span className="icon">{signup}</span>
-            <span className="label">Sign Up</span>
           </NavLink>
         </Menu.Item>
       </Menu>

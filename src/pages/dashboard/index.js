@@ -148,28 +148,28 @@ function Home() {
   ];
   const count = [
     {
-      today: "Today’s Sales",
+      today: "Өнөөдрийн борлуулалт",
       title: "$53,000",
       persent: "+30%",
       icon: dollor,
       bnb: "bnb2",
     },
     {
-      today: "Today’s Users",
+      today: "Өнөөдрийн хэрэглэгчид",
       title: "3,200",
       persent: "+20%",
       icon: profile,
       bnb: "bnb2",
     },
     {
-      today: "New Clients",
+      today: "Шинэ үйлчлүүлэгчид",
       title: "+1,200",
       persent: "-20%",
       icon: heart,
       bnb: "redtext",
     },
     {
-      today: "New Orders",
+      today: "Шинэ захиалга",
       title: "$13,200",
       persent: "10%",
       icon: cart,
@@ -398,17 +398,17 @@ function Home() {
             <Card bordered={false} className="criclebox cardbody h-full">
               <div className="project-ant">
                 <div>
-                  <Title level={5}>Projects</Title>
+                  <Title level={5}>Төслүүд</Title>
                   <Paragraph className="lastweek">
-                    done this month<span className="blue">40%</span>
+                  Энэ сард хийсэн<span className="blue">40%</span>
                   </Paragraph>
                 </div>
                 <div className="ant-filtertabs">
                   <div className="antd-pro-pages-dashboard-analysis-style-salesExtra">
                     <Radio.Group onChange={onChange} defaultValue="a">
-                      <Radio.Button value="a">ALL</Radio.Button>
-                      <Radio.Button value="b">ONLINE</Radio.Button>
-                      <Radio.Button value="c">STORES</Radio.Button>
+                      <Radio.Button value="a">БҮГД</Radio.Button>
+                      <Radio.Button value="b">ОНЛАЙН</Radio.Button>
+                      <Radio.Button value="c">ДЭЛГҮҮР</Radio.Button>
                     </Radio.Group>
                   </div>
                 </div>
@@ -417,10 +417,10 @@ function Home() {
                 <table className="width-100">
                   <thead>
                     <tr>
-                      <th>COMPANIES</th>
-                      <th>MEMBERS</th>
-                      <th>BUDGET</th>
-                      <th>COMPLETION</th>
+                      <th>КОМПАНИУД</th>
+                      <th>ГИШҮҮД</th>
+                      <th>ТӨСӨВ</th>
+                      <th>ГҮЙЦЭТГЭЛ</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -457,7 +457,9 @@ function Home() {
                     className="ant-full-box"
                     icon={<ToTopOutlined />}
                   >
-                    <span className="click">Click to Upload</span>
+                    <span className="click">
+                    Зураг байршуулах
+                    </span>
                   </Button>
                 </Upload>
               </div>
@@ -466,13 +468,13 @@ function Home() {
           <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
               <div className="timeline-box">
-                <Title level={5}>Orders History</Title>
+                <Title level={5}>Захиалгын түүх</Title>
                 <Paragraph className="lastweek" style={{ marginBottom: 24 }}>
-                  this month <span className="bnb2">20%</span>
+                Энэ сар <span className="bnb2">20%</span>
                 </Paragraph>
 
                 <Timeline
-                  pending="Recording..."
+                  pending="Бичэлт хийж байна..."
                   className="timelinelist"
                   reverse={reverse}
                 >
@@ -509,16 +511,19 @@ function Home() {
                 >
                   <div className="h-full col-content p-20">
                     <div className="ant-muse">
-                      <Text>Built by developers</Text>
-                      <Title level={5}>Muse Dashboard for Ant Design</Title>
+                      <Text>
+                        
+                      </Text>
+                      <Title level={5}>
+                        
+                      </Title>
                       <Paragraph className="lastweek mb-36">
-                        From colors, cards, typography to complex elements, you
-                        will find the full documentation.
+                        
                       </Paragraph>
                     </div>
                     <div className="card-footer">
-                      <a className="icon-move-right" href="#pablo">
-                        Read More
+                      <a className="icon-move-right" href="#">
+                        
                         {<RightOutlined />}
                       </a>
                     </div>
