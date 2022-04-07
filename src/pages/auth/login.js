@@ -96,7 +96,7 @@ export default function SigningPage() {
                 },
               ]}
             >
-              <Input placeholder="admin_01" />
+              <Input placeholder="merchant_001" />
             </Form.Item>
 
             <Form.Item
@@ -110,7 +110,7 @@ export default function SigningPage() {
                 },
               ]}
             >
-              <Input placeholder="Password" />
+              <Input.Password placeholder="****" />
             </Form.Item>
 
             <Form.Item

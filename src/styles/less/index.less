@@ -3,10 +3,7 @@
 @import "../../../node_modules/antd/dist/antd.less";
 @import "../../../node_modules/antd/lib/style/themes/default.less";
 
-// @import "~antd/dist/antd.less";
-// @import "~antd/lib/style/themes/default.less";
-
-@primary-color: #ffa400; // primary color for all components
+@primary-color: #fede00; // primary color for all components; // primary color for all components
 @link-color: #1890ff; // link color
 @success-color: #52c41a; // success state color
 @warning-color: #faad14; // warning state color
@@ -18,25 +15,15 @@
 @disabled-color: rgba(0, 0, 0, 0.25); // disable state color
 @border-radius-base: 12px; // major border radius
 @border-color-base: #d9d9d9; // major border color
-@box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
-  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05); // major shadow for layers
-
-.orgil {
-
-  .test {
-    
-  }
-}
-
-.orgil .test {
-
-}
+@box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05); // major shadow for layers
+@btn-primary-color: black;
 
 .@{btn-prefix-cls} {
   &-variants {
     .btn-primary();
 
-    border-radius: 24px;;
+    border-radius: 24px;
+    ;
 
     .@{btn-prefix-cls}-group &:not(:first-child):not(:last-child) {
       border-right-color: @btn-group-border;
@@ -58,7 +45,7 @@
     }
 
     .@{btn-prefix-cls}-group &:last-child:not(:first-child),
-    .@{btn-prefix-cls}-group & + & {
+    .@{btn-prefix-cls}-group &+& {
       border-left-color: @btn-group-border;
 
       &[disabled] {
@@ -66,6 +53,10 @@
       }
     }
   }
+}
+
+.primary-color {
+  // color: @primary-color !important;
 }
 
 @import "./signin_page/index.less";

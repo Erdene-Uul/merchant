@@ -12,8 +12,8 @@ export default function NotfoundPage(){
         <div>
            
             <Result
-                status="404"
-                title="404"
+                status="500"
+                title="500"
                 subTitle="Уучлаарай таны хуудас алга байна"
                 extra={<Button type="primary" href="/" >Нүүр хуудас руу буцах</Button>}
             />

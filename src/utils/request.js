@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 
 import qs from "qs";
-
+import router from "next/router"
 // const storeConfig = require("../store").default;
 
 const statusHandler = async (response) => {
@@ -21,15 +21,18 @@ const nonJsonErrorHandler = {
     payload: "Error to connect server",
 };
 
-const errorHandler = async (error) => {
-    // if (error.response && error.response.status === 401) {
-    //   localStorage.removeItem("session");
-    //   // message.error()
-    //   return {
-    //     type: "Error",
-    //     payload: "Must enter as a user",
-    //   };
-    // }
+const errorHandler = async (error, isServer) => {
+    if (error.response && error.response.status === 401) {
+        if (!isServer) {
+            location.href = "/auth/login"
+        }
+
+        // message.error()
+        // return {
+        //     type: "Error",
+        //     payload: "Must enter as a user",
+        // };
+    }
 
     if (error.response) {
         try {
@@ -46,14 +49,12 @@ const errorHandler = async (error) => {
 
 // const api_host = process.env.NODE_ENV === "production" ? process.env.API_HOST || "" : "";
 
-const request = async (url, data, options, isUrlUse = false) => {
+const request = async (url, data, options, isServer) => {
     const defaultOptions = {
         credentials: "include",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json; charset=utf-8",
-            "client-token":
-                "7980054aa8ed55facf4a4b683a9ecdede74272c23ed93433fd4555a549758e05c18e92bf8b613c01f4af00c2225af9410391aa3ac1f4e5adbdf21dcb523b6c14",
         },
         body: JSON.stringify(data),
         ...options,
@@ -80,18 +81,18 @@ const request = async (url, data, options, isUrlUse = false) => {
         //   return await request(`${process.env.api_host}${url}`, data || {}, options || {}, true)
         // }
         console.log("error ", err)
-        throw await errorHandler(err);
+        throw await errorHandler(err, isServer);
     }
 };
 
-const httpMethod = (signal) => ({
+const httpMethod = (signal, isServer) => ({
     get: (url, data, options) => {
         if (signal) options.signal = signal;
 
         return request(url, data, {
             ...options,
             method: "GET",
-        });
+        }, isServer);
     },
     post: (url, data, options) => {
         if (signal) options.signal = signal;
@@ -99,7 +100,7 @@ const httpMethod = (signal) => ({
         return request(url, data, {
             ...options,
             method: "POST",
-        });
+        }, isServer);
     },
     put: (url, data, options) => {
         if (signal) options.signal = signal;
@@ -107,7 +108,7 @@ const httpMethod = (signal) => ({
         return request(url, data, {
             ...options,
             method: "PUT",
-        });
+        }, isServer);
     },
     del: (url, data, options) => {
         if (signal) options.signal = signal;
@@ -115,11 +116,18 @@ const httpMethod = (signal) => ({
         return request(url, data, {
             ...options,
             method: "DELETE",
-        });
+        }, isServer);
     },
 });
 
 export default {
-    ...httpMethod(),
+    ...httpMethod(undefined, false),
     signal: (signal) => httpMethod(signal),
+
 };
+
+
+export const apiRequest = {
+    ...httpMethod(null, true),
+    signal: (signal) => httpMethod(signal),
+}

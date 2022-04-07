@@ -70,7 +70,7 @@ export default function Transaction() {
 
   return (
     <Main>
-      <MyPageHeader title="Гүйлгээ" />
+      <MyPageHeader title="Захиалга" />
       <Card>
         <div>
           <Input style={{ width: 240 }}

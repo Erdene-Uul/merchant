@@ -33,3 +33,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+yarn.lock
+
+git config --global user.name "erkaerka1024"
+git config --global user.email "erkaerka1024@gmail.com"
+git config --global user.email "youremail@yourdomain.com"

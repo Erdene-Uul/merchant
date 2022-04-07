@@ -30,12 +30,5 @@ module.exports = withPlugins(plugins, {
     WEBSITE_URL: "https://admin.funplus.mn",
     hosted_button_id: process.env.hosted_button_id
   },
-  async rewrites() {
-    return [
-      // {
-      //   source: '/api/:slug*',
-      //   destination: `${process.env.API_HOST}/api/:slug*`
-      // }
-    ]
-  },
+
 });

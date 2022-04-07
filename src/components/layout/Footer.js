@@ -21,13 +21,15 @@ function Footer() {
       <Row className="just">
         <Col xs={24} md={12} lg={12}>
           <div className="copyright">
-            © Copyright 2021 
+            © 2021, made with
+            {<HeartFilled />} by
             <a href="#pablo" className="font-weight-bold" target="_blank">
-            Fun Plus
+              Fun Plus 2021 (Merchant System)
             </a>
-            LLC
+
           </div>
         </Col>
+
       </Row>
     </AntFooter>
   );

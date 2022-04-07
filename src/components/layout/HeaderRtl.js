@@ -94,7 +94,8 @@ const wifi = [
     <g
       id="Page-1"
       stroke="none"
-      // stroke-width="1"
+      // eslint-disable-next-line react/no-unknown-property
+      stroke-width="1"
       fill="none"
       fillRule="evenodd"
     >

@@ -10,5 +10,6 @@ export default function withSession(handler) {
       // Next.js dev mode (http://localhost:3000)
       secure: process.env.NODE_ENV === "production" ? true : false,
     },
+    
   });
 }
