@@ -26,6 +26,7 @@
   .layout-dashboard .header-control .sidebar-toggler {
     display: none;
   }
+  
 }
 
 @media (min-width: 768px) {
@@ -80,5 +81,11 @@
 @media (max-width: 768px) {
   .layout-dashboard.layout-dashboard-rtl .header-control {
     justify-content: flex-end;
+  }
+  .layout-dashboard .header-control .profile {
+    display: none;
+  }
+  .layout-dashboard .ant-layout-sider.sider-primary .logout{
+    display: none;
   }
 }
