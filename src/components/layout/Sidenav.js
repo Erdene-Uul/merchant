@@ -15,10 +15,11 @@
 import { Menu, Button } from "antd";
 // import { NavLink, useLocation } from "react-router-dom";
 // import logo from "../../assets/images/logo.png";
-import styled from "styled-components";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
+import MenuItem from "antd/lib/menu/MenuItem";
+import { LogoutOutlined } from "@ant-design/icons";
 
 const logo = "/assets/images/logo.png";
 
@@ -138,7 +139,9 @@ function Sidenav({ color }) {
             >
               {signup}
             </span>
-            <span className="label">Хэрэглэгчидийн <br /> мэдээлэл</span>
+            <span className="label">
+              Хэрэглэгчидийн <br /> мэдээлэл
+            </span>
           </NavLink>
         </Menu.Item>
 
@@ -194,7 +197,16 @@ function Sidenav({ color }) {
             <span className="label">Хувийн мэдээлэл</span>
           </NavLink>
         </Menu.Item>
-
+        <div className="logout">
+          <MenuItem key="6">
+            <NavLink href="/">
+              <span className="icon">
+                <LogoutOutlined />
+              </span>
+              <div className="label">Системээс гарах</div>
+            </NavLink>
+          </MenuItem>
+        </div>
       </Menu>
     </>
   );
