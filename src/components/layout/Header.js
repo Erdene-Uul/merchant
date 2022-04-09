@@ -11,6 +11,9 @@
 */
 
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
+// import { faUser, faBell } from "@fortawesome/free-solid-svg-icons";
 
 import {
   Space,
@@ -29,12 +32,14 @@ import {
   Menu,
 } from "antd";
 
-import { LogoutOutlined } from "@ant-design/icons";
+import { LogoutOutlined, BellFilled, UserOutlined } from "@ant-design/icons";
 
 // import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import avtar from "../../assets/images/team-2.jpg";
-import logoImg from "../../assets/images/logo.png";
+// import /assets/images/logo.png from "/assets/images/logo.png";
+import MenuItem from "antd/lib/menu/MenuItem";
+const onLogOut = () => {};
 
 const NavLink = styled.a``;
 const Link = styled.a``;
@@ -169,7 +174,7 @@ const data = [
 const menu = (
   <List
     min-width="100%"
-    className="header-notifications-dropdown "
+    className="header-notifications-dropdown"
     itemLayout="horizontal"
     dataSource={data}
     renderItem={(item) => (
@@ -196,7 +201,7 @@ const profile = [
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM12 7C12 8.10457 11.1046 9 10 9C8.89543 9 8 8.10457 8 7C8 5.89543 8.89543 5 10 5C11.1046 5 12 5.89543 12 7ZM9.99993 11C7.98239 11 6.24394 12.195 5.45374 13.9157C6.55403 15.192 8.18265 16 9.99998 16C11.8173 16 13.4459 15.1921 14.5462 13.9158C13.756 12.195 12.0175 11 9.99993 11Z"
+      d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM12 7C12 8.10457 11.1046 9 10 9C8.89543 9 8 8.10457 8 7C8 5.89543 8.89543 5 10 5C11.1046 5 12 5.89543 12 7ZM9.99993 11C7.98239 11 6.24394 12.195 5.45374 13.9157C6.55403 15.192 8.18265 30 9.99998 30C11.8173 30 13.4459 15.1921 14.5462 13.9158C13.756 12.195 12.0175 11 9.99993 11Z"
       fill="#111827"
     ></path>
   </svg>,
@@ -252,13 +257,13 @@ function Header({
   const hideDrawer = () => setVisible(false);
 
   return (
-    <>
+    <div className="psd">
       <Row gutter={[24, 0]}>
-        <Col span={8} md={6}>
+        <Col xs={18}>
           <Breadcrumb>
             <Breadcrumb.Item>
               <NavLink to="/">
-                <img src={logoImg} />
+                <span>Харилцагчийн нэр</span>
               </NavLink>
             </Breadcrumb.Item>
             <Breadcrumb.Item style={{ textTransform: "capitalize" }}>
@@ -274,7 +279,7 @@ function Header({
             </span>
           </div>
         </Col>
-        <Col span={16} md={6} className="header-control">
+        <Col xs={6} className="header-control">
           {/* <Button type="link" onClick={showDrawer}>
             {logsetting}
           </Button>
@@ -293,38 +298,39 @@ function Header({
                 className="ant-dropdown-link"
                 onClick={(e) => e.preventDefault()}
               >
-                {bell}
+                <FontAwesomeIcon icon={faBell} size="2x" />
               </a>
             </Dropdown>
           </Badge>
-          <Dropdown
-            className="profile"
-            overlay={
-              <Menu>
-                <Row>
-                  <Menu.Item>Хэрэглэгчийн мэдээлэл</Menu.Item>
-                </Row>
-                <Row>
-                  <Col span={12}>
-                    <Menu.Item>Гарах</Menu.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Menu.Item>
+          <div className="user">
+            <Dropdown
+              className="profile"
+              overlay={
+                <Menu>
+                  <Menu.Item>
+                    <div>Миний мэдээлэл</div>
+                  </Menu.Item>
+                  <MenuItem>
+                    <div>
+                      <span>Гарах</span>
+                      <span> </span>
                       <Space>
                         <LogoutOutlined />
                       </Space>
-                    </Menu.Item>
-                  </Col>
-                </Row>
-              </Menu>
-            }
-            trigger={["click"]}
-          >
-            <a href="#">{profile}</a>
-          </Dropdown>
+                    </div>
+                  </MenuItem>
+                </Menu>
+              }
+              trigger={["click"]}
+            >
+              <a href="#">
+                <FontAwesomeIcon icon={faUser} />
+              </a>
+            </Dropdown>
+          </div>
         </Col>
       </Row>
-    </>
+    </div>
   );
 }
 

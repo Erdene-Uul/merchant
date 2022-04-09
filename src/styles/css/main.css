@@ -45,6 +45,7 @@ body {
 }
 .layout-dashboard .ant-layout-sider.sider-primary .brand img {
   height: 30px;
+  margin-right: 10px;
 }
 .layout-dashboard .ant-layout-sider.sider-primary hr {
   margin: 18px 0;
@@ -1285,6 +1286,10 @@ img {
 .copyright {
   color: #8c8c8c;
   margin-top: 7px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  font-size: medium;
 }
 .copyright .anticon-heart {
   color: #f5222d;
@@ -1294,6 +1299,7 @@ img {
   margin: 0px 5px;
   color: #141414;
   font-weight: 700;
+  display: block;
 }
 .footer-menu ul {
   margin: 0px;
@@ -3036,4 +3042,17 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   svg
   path {
   fill: #8c8c8c;
+}
+.ant-dropdown-trigger.profile{
+  margin-right:15px;
+}
+.span.andt-badge{
+  margin-right:20px;
+}
+.layout-dashboard .header-control .user {
+  padding: 16px 12px;
+}
+.layout-dashboard .ant-layout-sider.sider-primary .someText{
+   display: flex;
+   text-align: center;
 }

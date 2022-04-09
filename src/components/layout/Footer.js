@@ -18,19 +18,13 @@ function Footer() {
 
   return (
     <AntFooter style={{ background: "#fafafa" }}>
-      <Row className="just">
-        <Col xs={24} md={12} lg={12}>
-          <div className="copyright">
-            © 2021, made with
-            {<HeartFilled />} by
-            <a href="#pablo" className="font-weight-bold" target="_blank">
-              Fun Plus 2021 (Merchant System)
-            </a>
-
-          </div>
-        </Col>
-
-      </Row>
+      <div className="copyright">
+        © 2021, made with
+        {<HeartFilled />} by
+        <a href="#pablo" className="font-weight-bold" target="_blank">
+          Fun Plus 2021 (Merchant System)
+        </a>
+      </div>
     </AntFooter>
   );
 }

@@ -110,8 +110,16 @@ function Sidenav({ color }) {
   return (
     <>
       <div className="brand">
-        <img src={logo} alt="" />
-        <span>Метро</span>
+        <div className="someText">
+          <img src={logo} alt="" />
+          <div>
+            <span> FunPlus Merchant</span>
+            <span>
+              <br />
+              (systems)
+            </span>
+          </div>
+        </div>
       </div>
       <hr />
       <Menu theme="light" mode="inline">
