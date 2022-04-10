@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   Card,
   Tabs,
@@ -7,8 +8,9 @@ import {
   Badge,
   Select,
   Button,
+  Form,
+  Input,
 } from "antd";
-import React, { useState } from "react";
 
 const { Option } = Select;
 
@@ -16,107 +18,202 @@ function handleChange(value) {
   console.log(`selected ${value}`);
 }
 const TimeTable = () => {
-  const tableData = [
-    {
-      id: "0",
-      day: "monday",
-      start_date: "09:00:00",
-      end_date: "18:00:00",
-      mode: "day",
-    },
-    {
-      id: "1",
-      day: "tuesday",
-      start_date: "09:00:00",
-      end_date: "18:00:00",
-      mode: "day",
-    },
-    {
-      id: "2",
-      day: "wednesday",
-      start_date: "09:00:00",
-      end_date: "18:00:00",
-      mode: "day",
-    },
-    {
-      id: "3",
-      day: "thursday",
-      start_date: "09:00:00",
-      end_date: "18:00:00",
-      mode: "day",
-    },
-    {
-      id: "4",
-      day: "friday",
-      start_date: "09:00:00",
-      end_date: "18:00:00",
-      mode: "day",
-    },
-    {
-      id: "5",
-      day: "saturday",
-      start_date: "09:00:00",
-      end_date: "18:00:00",
-      mode: "day",
-    },
-    {
-      id: "6",
-      day: "sunday",
-      start_date: null,
-      end_date: null,
-      mode: "closed",
-    },
-  ];
-  const dataSource = [
-    {
-      key: "1",
-      name: "Mike",
-      age: 32,
-      address: "10 Downing Street",
-    },
-    {
-      key: "2",
-      name: "John",
-      age: 42,
-      address: "10 Downing Street",
-    },
-  ];
+  const [editingRow, setEditingRow] = useState(null);
+  const [dataSource, setDataSource] = useState([]);
+  // const form = Form.useForm();
+  useEffect(() => {
+    const data = [];
+    for (let index = 0; index < 7; index++) {
+      data.push({
+        key: `${index}`,
+        monday: "9:10-12:10",
+        tuesday: "12:10-14:10",
+        wednesday: "14:10-16:10",
+        thursday: "16:10-18:10",
+        friday: "18:10-20:10",
+        saturday: "20:10-22:10",
+        sunday: "22:10-24:10",
+      });
+    }
+    setDataSource(data);
+  });
+  // const dataSource = [
+  //   {
+  //     key: "1",
+  //     name: "Mike",
+  //     age: 32,
+  //     address: "10 Downing Street",
+  //   },
+  //   {
+  //     key: "2",
+  //     name: "John",
+  //     age: 42,
+  //     address: "10 Downing Street",
+  //   },
+  // ];
 
   const columns = [
     {
       title: "Monday",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "monday",
+      key: "monday",
+      render: (text, record) => {
+        if (editingRow === record.key) {
+          return (
+            <Form.Item
+              name="monday"
+              rules={[{ required: true, message: "LOL" }]}
+            >
+              <Input />
+            </Form.Item>
+          );
+        } else {
+          return <p>{text}</p>;
+        }
+      },
     },
     {
       title: "Tuesday",
-      dataIndex: "age",
-      key: "age",
+      dataIndex: "tuesday",
+      key: "tuesday",
+      render: (text, record) => {
+        if (editingRow === record.key) {
+          return (
+            <Form.Item
+              name="tuesday"
+              rules={[{ required: true, message: "LOL" }]}
+            >
+              <Input />
+            </Form.Item>
+          );
+        } else {
+          return <p>{text}</p>;
+        }
+      },
     },
     {
       title: "Wednesday",
-      dataIndex: "address",
-      key: "address",
+      dataIndex: "wednesday",
+      key: "wednesday",
+      render: (text, record) => {
+        if (editingRow === record.key) {
+          return (
+            <Form.Item
+              name="wednesday"
+              rules={[{ required: true, message: "LOL" }]}
+            >
+              <Input />
+            </Form.Item>
+          );
+        } else {
+          return <p>{text}</p>;
+        }
+      },
     },
     {
       title: "Thursday",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "thursday",
+      key: "thursday",
+      render: (text, record) => {
+        if (editingRow === record.key) {
+          return (
+            <Form.Item
+              name="thursday"
+              rules={[{ required: true, message: "LOL" }]}
+            >
+              <Input />
+            </Form.Item>
+          );
+        } else {
+          return <p>{text}</p>;
+        }
+      },
     },
     {
       title: "Friday",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "friday",
+      key: "friday",
+      render: (text, record) => {
+        if (editingRow === record.key) {
+          return (
+            <Form.Item
+              name="friday"
+              rules={[{ required: true, message: "LOL" }]}
+            >
+              <Input />
+            </Form.Item>
+          );
+        } else {
+          return <p>{text}</p>;
+        }
+      },
     },
     {
       title: "Saturday",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "saturday",
+      key: "saturday",
+      render: (text, record) => {
+        if (editingRow === record.key) {
+          return (
+            <Form.Item
+              name="sunday"
+              rules={[{ required: true, message: "LOL" }]}
+            >
+              <Input />
+            </Form.Item>
+          );
+        } else {
+          return <p>{text}</p>;
+        }
+      },
     },
     {
       title: "Sunday",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "sunday",
+      key: "sunday",
+      render: (text, record) => {
+        if (editingRow === record.key) {
+          return (
+            <Form.Item
+              name="sunday"
+              rules={[{ required: true, message: "LOL" }]}
+            >
+              <Input />
+            </Form.Item>
+          );
+        } else {
+          return <p>{text}</p>;
+        }
+      },
+    },
+    {
+      title: "Actions",
+      render: (_, record) => {
+        return (
+          <>
+            <Button
+              type="link"
+              onClick={() => {
+                setEditingRow(record.key);
+                form.setFieldsValue({
+                  monday: record.monday,
+                  tuesday: record.tuesday,
+                  wednesday: record.wednesday,
+                  thursday: record.thursday,
+                  friday: record.friday,
+                  saturday: record.saturday,
+                  sunday: record.sunday,
+                });
+              }}
+            >
+              Edit
+            </Button>
+            <Button type="link" htmlType="submit">
+              Save
+            </Button>
+          </>
+        );
+      },
     },
   ];
 
@@ -155,8 +252,11 @@ const TimeTable = () => {
           <div>Баасан</div>
         </Option>
       </Select> */}
-      <Table dataSource={dataSource} columns={columns} />;
-      <Modal
+      <Form form={form}>
+        <Table dataSource={dataSource} columns={columns} />
+      </Form>
+      ;
+      {/* <Modal
         title="Basic Modal"
         visible={isModalVisible}
         onOk={handleOk}
@@ -172,7 +272,7 @@ const TimeTable = () => {
             <Option key={e.day}>{e.day}</Option>
           ))}
         </Select>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };
