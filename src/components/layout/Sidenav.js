@@ -12,14 +12,14 @@
 */
 
 // import { useState } from "react";
-import { Menu, Button } from "antd";
+import { Menu, Dropdown } from "antd";
 // import { NavLink, useLocation } from "react-router-dom";
 // import logo from "../../assets/images/logo.png";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
 import MenuItem from "antd/lib/menu/MenuItem";
-import { LogoutOutlined } from "@ant-design/icons";
+import { LogoutOutlined, SettingOutlined } from "@ant-design/icons";
 
 const logo = "/assets/images/logo.png";
 
@@ -110,7 +110,7 @@ function Sidenav({ color }) {
   return (
     <>
       <div className="brand">
-        <div className="someText">
+        <div className="flex text-center">
           <img src={logo} alt="" />
           <div>
             <span> FunPlus Merchant</span>
@@ -137,7 +137,7 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
 
-        <Menu.Item key="3">
+        <Menu.Item key="2">
           <NavLink href="/system_user/_u">
             <span
               className="icon"
@@ -153,7 +153,7 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
 
-        <Menu.Item key="5">
+        <Menu.Item key="3">
           <NavLink href="/transaction">
             <span
               className="icon"
@@ -166,7 +166,7 @@ function Sidenav({ color }) {
             <span className="label">Гүйлгээ</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="6">
+        <Menu.Item key="4">
           <NavLink href="/service">
             <span
               className="icon"
@@ -179,7 +179,7 @@ function Sidenav({ color }) {
             <span className="label">Үйлчилгээ</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="6">
+        <Menu.Item key="5">
           <NavLink href="/order">
             <span
               className="icon"
@@ -205,8 +205,21 @@ function Sidenav({ color }) {
             <span className="label">Хувийн мэдээлэл</span>
           </NavLink>
         </Menu.Item>
+        <Menu.Item key="7">
+          <NavLink href="/settings">
+            <span
+              className="icon"
+              style={{
+                background: page === "profile" ? color : "",
+              }}
+            >
+              <SettingOutlined />
+            </span>
+            <span className="label">Тохиргоо</span>
+          </NavLink>
+        </Menu.Item>
         <div className="logout">
-          <MenuItem key="6">
+          <MenuItem key="8">
             <NavLink href="/">
               <span className="icon">
                 <LogoutOutlined />
