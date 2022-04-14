@@ -35,7 +35,6 @@ import dynamic from "next/dynamic";
 
 import Paragraph from "antd/lib/typography/Paragraph";
 
-
 import ava1 from "../../assets/images/logo-shopify.svg";
 import ava2 from "../../assets/images/logo-atlassian.svg";
 import ava3 from "../../assets/images/logo-slack.svg";
@@ -49,9 +48,12 @@ import team4 from "../../assets/images/team-4.jpg";
 import card from "../../assets/images/info-card-1.jpg";
 import Main from "../../components/layout/Main";
 
-const Echart = dynamic(() => import("../../components/chart/EChart"), { ssr: false });
-const LineChart = dynamic(() => import("../../components/chart/LineChart"), { ssr: false });
-
+const Echart = dynamic(() => import("../../components/chart/EChart"), {
+  ssr: false,
+});
+const LineChart = dynamic(() => import("../../components/chart/LineChart"), {
+  ssr: false,
+});
 
 function Home() {
   const { Title, Text } = Typography;
@@ -148,29 +150,29 @@ function Home() {
   ];
   const count = [
     {
-      today: "Today’s Sales",
-      title: "$53,000",
+      today: "Өнөөдрийн борлуулалт",
+      title: "53,000₮",
       persent: "+30%",
       icon: dollor,
       bnb: "bnb2",
     },
+    // {
+    //   today: "Today’s Users",
+    //   title: "3,200",
+    //   persent: "+20%",
+    //   icon: profile,
+    //   bnb: "bnb2",
+    // },
+    // {
+    //   today: "New Clients",
+    //   title: "+1,200",
+    //   persent: "-20%",
+    //   icon: heart,
+    //   bnb: "redtext",
+    // },
     {
-      today: "Today’s Users",
-      title: "3,200",
-      persent: "+20%",
-      icon: profile,
-      bnb: "bnb2",
-    },
-    {
-      today: "New Clients",
-      title: "+1,200",
-      persent: "-20%",
-      icon: heart,
-      bnb: "redtext",
-    },
-    {
-      today: "New Orders",
-      title: "$13,200",
+      today: "Захиалга",
+      title: "13,200₮",
       persent: "10%",
       icon: cart,
       bnb: "bnb2",
@@ -393,7 +395,7 @@ function Home() {
           </Col>
         </Row>
 
-        <Row gutter={[24, 0]}>
+        {/* <Row gutter={[24, 0]}>
           <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
             <Card bordered={false} className="criclebox cardbody h-full">
               <div className="project-ant">
@@ -493,9 +495,9 @@ function Home() {
               </div>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
 
-        <Row gutter={[24, 0]}>
+        {/* <Row gutter={[24, 0]}>
           <Col xs={24} md={12} sm={24} lg={12} xl={14} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
               <Row gutter>
@@ -559,7 +561,7 @@ function Home() {
               </div>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     </Main>
   );

@@ -1,6 +1,6 @@
-import Document, { Head, Main, NextScript, Html } from 'next/document';
+import Document, { Head, Main, NextScript, Html } from "next/document";
 // Import styled components ServerStyleSheet
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -8,8 +8,8 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
 
     // Step 2: Retrieve styles from components in the page
-    const page = renderPage((App) => (props) =>
-      sheet.collectStyles(<App {...props} />),
+    const page = renderPage(
+      (App) => (props) => sheet.collectStyles(<App {...props} />)
     );
 
     // Step 3: Extract the styles as <style> tags
@@ -23,13 +23,18 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
+          <link rel="stylelesheet" href="/assets/css/font-awesome.min.css" />
         </Head>
         <body>
           <Main />
           <NextScript />
+          <script
+            async
+            src="https://kit.fontawesome.com/f9e2ab07a1.js"
+            crossOrigin="anonymous"
+          ></script>
         </body>
       </Html>
     );
