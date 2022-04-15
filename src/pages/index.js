@@ -35,12 +35,12 @@ import dynamic from "next/dynamic";
 
 import Paragraph from "antd/lib/typography/Paragraph";
 
-
-
 import Main from "components/layout/Main";
 
 const Echart = dynamic(() => import("components/chart/EChart"), { ssr: false });
-const LineChart = dynamic(() => import("components/chart/LineChart"), { ssr: false });
+const LineChart = dynamic(() => import("components/chart/LineChart"), {
+  ssr: false,
+});
 
 const card = "assets/images/info-card-1.jpg";
 
@@ -53,7 +53,8 @@ const ava6 = "/assets/images/logo-invision.svg";
 const team1 = "/assets/images/team-1.jpg";
 const team2 = "/assets/images/team-2.jpg";
 const team3 = "/assets/images/team-3.jpg";
-const team4 = "https://cdn4.buysellads.net/uu/1/110638/1645713861-1635182892-260x200-white-logo-blue-background.png";
+const team4 =
+  "https://cdn4.buysellads.net/uu/1/110638/1645713861-1635182892-260x200-white-logo-blue-background.png";
 
 function Home() {
   const { Title, Text } = Typography;
@@ -150,29 +151,16 @@ function Home() {
   ];
   const count = [
     {
-      today: "Today’s Sales",
-      title: "$53,000",
+      today: "Өнөөдрийн борлуулалт",
+      title: "53,000₮",
       persent: "+30%",
       icon: dollor,
       bnb: "bnb2",
     },
+
     {
-      today: "Today’s Users",
-      title: "3,200",
-      persent: "+20%",
-      icon: profile,
-      bnb: "bnb2",
-    },
-    {
-      today: "New Clients",
-      title: "+1,200",
-      persent: "-20%",
-      icon: heart,
-      bnb: "redtext",
-    },
-    {
-      today: "New Orders",
-      title: "$13,200",
+      today: "Захиалга",
+      title: "13,200₮",
       persent: "10%",
       icon: cart,
       bnb: "bnb2",
@@ -395,7 +383,7 @@ function Home() {
           </Col>
         </Row>
 
-        <Row gutter={[24, 0]}>
+        {/* <Row gutter={[24, 0]}>
           <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
             <Card bordered={false} className="criclebox cardbody h-full">
               <div className="project-ant">
@@ -561,7 +549,7 @@ function Home() {
               </div>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     </Main>
   );

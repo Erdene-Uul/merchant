@@ -2,7 +2,7 @@ import React from "react";
 import { Calendar, Badge, Modal, Form, Input, Button } from "antd";
 let day = 0;
 const Calendars = () => {
-  const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const [isModalVisible, setIsModalVisible] = React.useState(true);
   const [selectDate, setSelectDate] = React.useState();
   const [calendars, setCalendars] = React.useState([]);
   const [form] = Form.useForm();
@@ -10,7 +10,7 @@ const Calendars = () => {
   const showModal = (value) => {
     setSelectDate(value.toDate());
   };
-  const handleCancel = () => {
+  const onClose = () => {
     setIsModalVisible(false);
   };
   function getListData(value) {
@@ -76,6 +76,7 @@ const Calendars = () => {
         title="Basic Modal"
         visible={!!selectDate}
         footer={null}
+        onCancel={onClose}
       >
         <Form
           onFinish={(e) => {

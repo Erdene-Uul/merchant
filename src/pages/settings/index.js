@@ -19,24 +19,16 @@ import TimeCheckbox from "components/TimeCheckbox";
 const { Option } = Select;
 
 export default function SettingsPage() {
+  function onChanged(checkedValues) {
+    console.log("checked = ", checkedValues);
+  }
   const [key, setKey] = React.useState(0);
-  const [checked, setChecked] = React.useState(false);
-  const [checked1, setChecked1] = React.useState(false);
-  const [checked2, setChecked2] = React.useState(false);
+
   const { TabPane } = Tabs;
 
   function callback(key) {
     console.log(key);
   }
-  const onChecked = () => {
-    setChecked(!checked);
-  };
-  const onChecked1 = () => {
-    setChecked1(!checked1);
-  };
-  const onChecked2 = () => {
-    setChecked2(!checked2);
-  };
   const onChange = (e) => {
     setKey(e);
   };
@@ -101,36 +93,34 @@ export default function SettingsPage() {
                   }}
                 />
               </div>
-              <Select
-                defaultValue="Vip өрөө"
-                style={{ width: 200 }}
-                onChange={onChange}
-              >
-                <Option value="1">VIP ширээ 1</Option>
-                <Option value="2">VIP ширээ 2</Option>
-                <Option value="3">VIP ширээ 3</Option>
-              </Select>
-              <Select
-                defaultValue="Энгийн өрөө"
-                style={{ width: 200 }}
-                onChange={onChange}
-              >
-                <Option value="1">Ширээ 1</Option>
-                <Option value="2">Ширээ 2</Option>
-                <Option value="3">Ширээ 3</Option>
-              </Select>
-            </div>
-            <div className="mt-7 flex space-x-4 items-center">
-              <TimeCheckbox
-                action={{
-                  onChange: onChecked,
-                  checked: checked,
-                  onChange1: onChecked1,
-                  checked1: checked1,
-                  onChange2: onChecked2,
-                  checked2: checked2,
-                }}
-              />
+              <div>
+                <Select
+                  defaultValue="Vip өрөө"
+                  style={{ width: 200 }}
+                  onChange={onChange}
+                >
+                  <Option value="1">VIP ширээ 1</Option>
+                  <Option value="2">VIP ширээ 2</Option>
+                  <Option value="3">VIP ширээ 3</Option>
+                </Select>
+                <Select
+                  onChange={onChange}
+                  defaultValue="Энгийн өрөө"
+                  style={{ width: 200 }}
+                >
+                  <Option value="4">Ширээ 1</Option>
+                  <Option value="5">Ширээ 2</Option>
+                  <Option value="6">Ширээ 3</Option>
+                </Select>
+                <div className="mt-7 flex space-x-4 items-center">
+                  <TimeCheckbox
+                    action={{
+                      onChange: onChanged,
+                      table: key,
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </TabPane>
         </Tabs>
