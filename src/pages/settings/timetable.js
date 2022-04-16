@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   Form,
   Card,
@@ -10,10 +11,6 @@ import {
   Input,
   Button,
 } from "antd";
-import "antd/dist/antd.css";
-import React, { useState } from "react";
-
-const { Option } = Select;
 
 function handleChange(value) {
   console.log(`selected ${value}`);

@@ -7,10 +7,8 @@ const httpProxyMiddleware = require("next-http-proxy-middleware");
 
 const BACKEND = process.env.BACKEND || "http://localhost:5000";
 
-
 async function handler(req, res) {
-
-  api_middleware(req, res)
+  api_middleware(req, res);
 
   const { slug } = req.query;
 
@@ -18,36 +16,32 @@ async function handler(req, res) {
 
   if (!slug) {
     res.status(404).json({
-      message: "API_NOTFOUND"
+      message: "API_NOTFOUND",
     });
     return;
   }
 
-  console.log("slug ", slug)
+  console.log("slug ", slug);
 
   if (slug[0] && slug[0].toLowerCase() === version) {
-
     httpProxyMiddleware.default(req, res, {
       target: BACKEND,
       // cookieDomainRewrite: "https://admin.funplus.mn",
-      pathRewrite:"",
+      pathRewrite: "",
       headers: {
         "cilent-token": "123",
-        Authorization:`Bearer ${req.session.token}`
-      }
-    })
-
+        Authorization: `Bearer ${req.session.token}`,
+      },
+    });
   } else if (req.apis[slug[0]] && typeof req.apis[slug[0]] === "function") {
-
-    if(req.method !== "GET")  {
-      res.json(await req.apis[slug[0]](req.body))
+    if (req.method !== "GET") {
+      res.json(await req.apis[slug[0]](req.body));
     } else {
-      res.json(await req.apis[slug[0]](req.query))
+      res.json(await req.apis[slug[0]](req.query));
     }
-
   } else {
     res.status(404).json({
-      message: "API_NOTFOUND"
+      message: "API_NOTFOUND",
     });
     return;
   }
@@ -57,8 +51,4 @@ export default withError(withSession(handler));
 
 const version = "v1";
 
-
-
-const mySlugs = [
-  "login"
-]
+const mySlugs = ["login"];
