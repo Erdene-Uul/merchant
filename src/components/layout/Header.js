@@ -257,9 +257,10 @@ function Header({
   const hideDrawer = () => setVisible(false);
 
   return (
-    <div className="psd">
-      <Row gutter={[24, 0]}>
-        <Col xs={18}>
+    <div className="flex justify-between items-center px-5">
+      <p className="text-[#a2a2a2]">Харилцагчийн нэр</p>
+      {/* <Row gutter={[24, 0]}> */}
+      {/* <Col xs={18}>
           <Breadcrumb>
             <Breadcrumb.Item>
               <NavLink to="/">
@@ -278,58 +279,60 @@ function Header({
               {subName.replace("/", "")}
             </span>
           </div>
-        </Col>
-        <Col xs={6} className="header-control">
-          {/* <Button type="link" onClick={showDrawer}>
+        </Col> */}
+      {/* <Col xs={6} className="header-control"> */}
+      {/* <Button type="link" onClick={showDrawer}>
             {logsetting}
           </Button>
        */}
-          <Button
-            type="link"
-            className="sidebar-toggler"
-            onClick={() => onPress()}
-          >
+      <div className="flex justify-center items-center space-x-7">
+        <div className="xl:hidden">
+          <Button type="link" onClick={() => onPress()}>
             {toggler}
           </Button>
-          <Badge size="small" count={4}>
-            <Dropdown overlay={menu} trigger={["click"]}>
-              <a
-                href="#pablo"
-                className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
-              >
-                <FontAwesomeIcon icon={faBell} size="2x" />
-              </a>
-            </Dropdown>
-          </Badge>
-          <div className="user">
-            <Dropdown
-              className="profile"
-              overlay={
-                <Menu>
-                  <Menu.Item>
+        </div>
+        <div className="xl:visible cursor-pointer user">
+          <Dropdown
+            overlay={
+              <Menu>
+                <Menu.Item>
+                  <Link href="/profile">
                     <div>Миний мэдээлэл</div>
-                  </Menu.Item>
-                  <MenuItem>
-                    <div>
-                      <span>Гарах</span>
-                      <span> </span>
-                      <Space>
-                        <LogoutOutlined />
-                      </Space>
-                    </div>
-                  </MenuItem>
-                </Menu>
-              }
-              trigger={["click"]}
+                  </Link>
+                </Menu.Item>
+
+                <MenuItem>
+                  <div>
+                    <span className="mr-1">Гарах</span>
+                    <i className="fa-solid fa-right-from-bracket"></i>
+                  </div>
+                </MenuItem>
+              </Menu>
+            }
+            trigger={["click"]}
+          >
+            <div className="text-2xl text-black">
+              <i className="fa-solid fa-user"></i>
+            </div>
+          </Dropdown>
+        </div>
+        <Badge size="small" count={4}>
+          <Dropdown overlay={menu} trigger={["click"]}>
+            <a
+              href="#pablo"
+              className="ant-dropdown-link"
+              onClick={(e) => e.preventDefault()}
             >
-              <a href="#">
-                <FontAwesomeIcon icon={faUser} />
-              </a>
-            </Dropdown>
-          </div>
-        </Col>
-      </Row>
+              <div className="text-2xl text-black">
+                <i className="fa-solid fa-bell"></i>
+              </div>
+            </a>
+          </Dropdown>
+        </Badge>
+
+        {/* </Col> */}
+        {/* </Row> */}
+      </div>
     </div>
   );
 }

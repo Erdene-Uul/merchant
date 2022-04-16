@@ -6,18 +6,16 @@ const Calendars = () => {
   const [selectDate, setSelectDate] = React.useState();
   const [calendars, setCalendars] = React.useState([]);
   const [form] = Form.useForm();
-  console.log(selectDate);
   const showModal = (value) => {
     setSelectDate(value.toDate());
   };
   const onClose = () => {
-    setIsModalVisible(false);
+    setSelectDate(!selectDate);
   };
   function getListData(value) {
     let listData = [];
 
     calendars.forEach((e) => {
-      console.log(e);
       const _date = new Date(e.selectDate);
       _date.setHours(23, 59, 59, 59);
       const _date2 = new Date(e.selectDate);
@@ -89,6 +87,7 @@ const Calendars = () => {
             ]);
             setSelectDate(null);
             form.resetFields();
+            console.log(calendars);
           }}
         >
           <Form.Item name="about">

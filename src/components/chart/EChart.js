@@ -20,19 +20,19 @@ function EChart() {
   const items = [
     {
       Title: "3,6K",
-      user: "Users",
+      user: "Хэрэглэгчид",
     },
     {
       Title: "2m",
-      user: "Clicks",
+      user: "Хандалтууд",
     },
     {
       Title: "$772",
-      user: "Sales",
+      user: "Захиалга",
     },
     {
       Title: "82",
-      user: "Items",
+      user: "Үйлчилгээ",
     },
   ];
 
@@ -48,14 +48,14 @@ function EChart() {
         />
       </div>
       <div className="chart-vistior">
-        <Title level={5}>Active Users</Title>
+        <Title level={5}>Идэвхитэй хэрэглэгчид</Title>
         <Paragraph className="lastweek">
-          than last week <span className="bnb2">+30%</span>
+          өнгөрсөн долоо хоногоос <span className="bnb2">+30%</span>
         </Paragraph>
-        <Paragraph className="lastweek">
+        {/* <Paragraph className="lastweek">
           We have created multiple options for you to put together and customise
           into pixel perfect pages.
-        </Paragraph>
+        </Paragraph> */}
         <Row gutter>
           {items.map((v, index) => (
             <Col xs={6} xl={6} sm={6} md={6} key={index}>

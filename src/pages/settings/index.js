@@ -19,8 +19,14 @@ import TimeCheckbox from "components/TimeCheckbox";
 const { Option } = Select;
 
 export default function SettingsPage() {
+  const [order, setOrder] = React.useState([]);
+
   function onChanged(checkedValues) {
+    let data = [...order];
     console.log("checked = ", checkedValues);
+    order.push(checkedValues);
+    setOrder(data);
+    console.log(order);
   }
   const [key, setKey] = React.useState(0);
 

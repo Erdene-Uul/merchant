@@ -156,198 +156,231 @@ function Home() {
       icon: dollor,
       bnb: "bnb2",
     },
-    // {
-    //   today: "Today’s Users",
-    //   title: "3,200",
-    //   persent: "+20%",
-    //   icon: profile,
-    //   bnb: "bnb2",
-    // },
-    // {
-    //   today: "New Clients",
-    //   title: "+1,200",
-    //   persent: "-20%",
-    //   icon: heart,
-    //   bnb: "redtext",
-    // },
+    {
+      today: "FUNPLUS мөнгөн дүн",
+      title: "3,200₮",
+      persent: "+20%",
+      icon: profile,
+      bnb: "bnb2",
+    },
+    {
+      today: "Шинэ хэрэглэгчид",
+      title: "+1,200",
+      persent: "-20%",
+      icon: heart,
+      bnb: "redtext",
+    },
     {
       today: "Захиалга",
       title: "13,200₮",
-      persent: "10%",
+      persent: "-10%",
       icon: cart,
+      bnb: "redtext",
+    },
+  ];
+  const count1 = [
+    {
+      today: "Борлуулалт",
+      title: "53,000₮",
+      persent: "+30%",
+      date: "2022.04.06",
       bnb: "bnb2",
     },
-  ];
-
-  const list = [
     {
-      img: ava1,
-      Title: "Soft UI Shopify Version",
-      bud: "$14,000",
-      progress: <Progress percent={60} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Jessica Doe">
-            <img className="tootip-img" src={team4} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      today: "FUNPLUS ",
+      title: "3,200₮",
+      persent: "+20%",
+      date: "2022.04.10",
+      bnb: "bnb2",
     },
     {
-      img: ava2,
-      Title: "Progress Track",
-      bud: "$3,000",
-      progress: <Progress percent={10} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      today: "Хэрэглэгчид",
+      title: "+1,200",
+      persent: "-20%",
+      date: "2022.04.18",
+      bnb: "redtext",
     },
     {
-      img: ava3,
-      Title: "Fix Platform Errors",
-      bud: "Not Set",
-      progress: <Progress percent={100} size="small" status="active" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-    {
-      img: ava4,
-      Title: "Launch new Mobile App",
-      bud: "$20,600",
-      progress: <Progress percent={100} size="small" status="active" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-    {
-      img: ava5,
-      Title: "Add the New Landing Page",
-      bud: "$4,000",
-      progress: <Progress percent={80} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Jessica Doe">
-            <img className="tootip-img" src={team4} alt="" />
-          </Tooltip>
-        </div>
-      ),
-    },
-
-    {
-      img: ava6,
-      Title: "Redesign Online Store",
-      bud: "$2,000",
-      progress: (
-        <Progress
-          percent={100}
-          size="small"
-          status="exception"
-          format={() => "Cancel"}
-        />
-      ),
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      today: "Захиалга",
+      title: "13,200₮",
+      persent: "-10%",
+      date: "2022.04.29",
+      bnb: "redtext",
     },
   ];
+
+  // const list = [
+  //   {
+  //     img: ava1,
+  //     Title: "Soft UI Shopify Version",
+  //     bud: "$14,000",
+  //     progress: <Progress percent={60} size="small" />,
+  //     member: (
+  //       <div className="avatar-group mt-2">
+  //         <Tooltip placement="bottom" title="Ryan Tompson">
+  //           <img className="tootip-img" src={team1} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Romina Hadid">
+  //           <img className="tootip-img" src={team2} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Alexander Smith">
+  //           <img className="tootip-img" src={team3} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Jessica Doe">
+  //           <img className="tootip-img" src={team4} alt="" />
+  //         </Tooltip>
+  //       </div>
+  //     ),
+  //   },
+  //   {
+  //     img: ava2,
+  //     Title: "Progress Track",
+  //     bud: "$3,000",
+  //     progress: <Progress percent={10} size="small" />,
+  //     member: (
+  //       <div className="avatar-group mt-2">
+  //         <Tooltip placement="bottom" title="Ryan Tompson">
+  //           <img className="tootip-img" src={team1} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Romina Hadid">
+  //           <img className="tootip-img" src={team2} alt="" />
+  //         </Tooltip>
+  //       </div>
+  //     ),
+  //   },
+  //   {
+  //     img: ava3,
+  //     Title: "Fix Platform Errors",
+  //     bud: "Not Set",
+  //     progress: <Progress percent={100} size="small" status="active" />,
+  //     member: (
+  //       <div className="avatar-group mt-2">
+  //         <Tooltip placement="bottom" title="Ryan Tompson">
+  //           <img className="tootip-img" src={team1} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Romina Hadid">
+  //           <img className="tootip-img" src={team1} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Alexander Smith">
+  //           <img className="tootip-img" src={team3} alt="" />
+  //         </Tooltip>
+  //       </div>
+  //     ),
+  //   },
+  //   {
+  //     img: ava4,
+  //     Title: "Launch new Mobile App",
+  //     bud: "$20,600",
+  //     progress: <Progress percent={100} size="small" status="active" />,
+  //     member: (
+  //       <div className="avatar-group mt-2">
+  //         <Tooltip placement="bottom" title="Ryan Tompson">
+  //           <img className="tootip-img" src={team1} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Romina Hadid">
+  //           <img className="tootip-img" src={team2} alt="" />
+  //         </Tooltip>
+  //       </div>
+  //     ),
+  //   },
+  //   {
+  //     img: ava5,
+  //     Title: "Add the New Landing Page",
+  //     bud: "$4,000",
+  //     progress: <Progress percent={80} size="small" />,
+  //     member: (
+  //       <div className="avatar-group mt-2">
+  //         <Tooltip placement="bottom" title="Ryan Tompson">
+  //           <img className="tootip-img" src={team1} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Romina Hadid">
+  //           <img className="tootip-img" src={team2} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Alexander Smith">
+  //           <img className="tootip-img" src={team3} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Jessica Doe">
+  //           <img className="tootip-img" src={team4} alt="" />
+  //         </Tooltip>
+  //       </div>
+  //     ),
+  //   },
+
+  //   {
+  //     img: ava6,
+  //     Title: "Redesign Online Store",
+  //     bud: "$2,000",
+  //     progress: (
+  //       <Progress
+  //         percent={100}
+  //         size="small"
+  //         status="exception"
+  //         format={() => "Cancel"}
+  //       />
+  //     ),
+  //     member: (
+  //       <div className="avatar-group mt-2">
+  //         <Tooltip placement="bottom" title="Ryan Tompson">
+  //           <img className="tootip-img" src={team1} alt="" />
+  //         </Tooltip>
+  //         <Tooltip placement="bottom" title="Romina Hadid">
+  //           <img className="tootip-img" src={team2} alt="" />
+  //         </Tooltip>
+  //       </div>
+  //     ),
+  //   },
+  // ];
 
   const timelineList = [
     {
-      title: "$2,400 - Redesign store",
+      title: "Зарлага",
       time: "09 JUN 7:20 PM",
-      color: "green",
+      color: "red",
     },
     {
-      title: "New order #3654323",
+      title: "Шинэ захиалга",
       time: "08 JUN 12:20 PM",
       color: "green",
     },
     {
-      title: "Company server payments",
+      title: "Шинэ захиалга",
       time: "04 JUN 3:10 PM",
+      color: "green",
     },
     {
-      title: "New card added for order #4826321",
+      title: "Шинэ захиалга ",
       time: "02 JUN 2:45 PM",
+      color: "green",
     },
     {
-      title: "Unlock folders for development",
+      title: "Шинэ захиалга",
       time: "18 MAY 1:30 PM",
+      color: "green",
     },
     {
-      title: "New order #46282344",
+      title: "Зарлага",
       time: "14 MAY 3:30 PM",
-      color: "gray",
+      color: "red",
     },
   ];
 
-  const uploadProps = {
-    name: "file",
-    action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-    headers: {
-      authorization: "authorization-text",
-    },
-    onChange(info) {
-      if (info.file.status !== "uploading") {
-        console.log(info.file, info.fileList);
-      }
-      if (info.file.status === "done") {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
-  };
+  // const uploadProps = {
+  //   name: "file",
+  //   action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+  //   headers: {
+  //     authorization: "authorization-text",
+  //   },
+  //   onChange(info) {
+  //     if (info.file.status !== "uploading") {
+  //       console.log(info.file, info.fileList);
+  //     }
+  //     if (info.file.status === "done") {
+  //       message.success(`${info.file.name} file uploaded successfully`);
+  //     } else if (info.file.status === "error") {
+  //       message.error(`${info.file.name} file upload failed.`);
+  //     }
+  //   },
+  // };
 
   return (
     <Main>
@@ -390,13 +423,71 @@ function Home() {
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
+              {/* <Row className="rowgap-vbox" gutter={[24, 0]}>
+                {count1.map((c, index) => (
+                  <Col
+                    key={index}
+                    xs={24}
+                    sm={24}
+                    md={12}
+                    lg={6}
+                    xl={6}
+                    className="mb-24"
+                  >
+                    <Card bordered={false} className="criclebox ">
+                      <div className="number">
+                        <Row align="middle" gutter={[24, 0]}>
+                          <Col xs={18}>
+                            <span>{c.today}</span>
+                            <Title level={3}>
+                              {c.title}{" "}
+                              <small className={c.bnb}>{c.persent}</small>
+                            </Title>
+                          </Col>
+                        </Row>
+                        <div>{c.date}</div>
+                      </div>
+                    </Card>
+                  </Col>
+                ))}
+              </Row> */}
               <LineChart />
+            </Card>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-24">
+            <Card bordered={false} className="criclebox">
+              <div className="timeline-box">
+                <Title level={5}>Гүйлгээний түүх</Title>
+                <Paragraph className="lastweek" style={{ marginBottom: 24 }}>
+                  Энэ сард <span className="bnb2">20%</span>
+                </Paragraph>
+
+                <Timeline
+                  // pending="Recording..."
+                  className="timelinelist"
+                  // reverse={reverse}
+                >
+                  {timelineList.map((t, index) => (
+                    <Timeline.Item color={t.color} key={index}>
+                      <Title level={5}>{t.title}</Title>
+                      <Text>{t.time}</Text>
+                    </Timeline.Item>
+                  ))}
+                </Timeline>
+                {/* <Button
+                  type="primary"
+                  className="width-100"
+                  onClick={() => setReverse(!reverse)}
+                >
+                  {<MenuUnfoldOutlined />} REVERSE
+                </Button> */}
+              </div>
             </Card>
           </Col>
         </Row>
 
-        {/* <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
+        {/* <Row gutter={[24, 0]}> */}
+        {/* <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
             <Card bordered={false} className="criclebox cardbody h-full">
               <div className="project-ant">
                 <div>
@@ -464,38 +555,8 @@ function Home() {
                 </Upload>
               </div>
             </Card>
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-24">
-            <Card bordered={false} className="criclebox h-full">
-              <div className="timeline-box">
-                <Title level={5}>Orders History</Title>
-                <Paragraph className="lastweek" style={{ marginBottom: 24 }}>
-                  this month <span className="bnb2">20%</span>
-                </Paragraph>
-
-                <Timeline
-                  pending="Recording..."
-                  className="timelinelist"
-                  reverse={reverse}
-                >
-                  {timelineList.map((t, index) => (
-                    <Timeline.Item color={t.color} key={index}>
-                      <Title level={5}>{t.title}</Title>
-                      <Text>{t.time}</Text>
-                    </Timeline.Item>
-                  ))}
-                </Timeline>
-                <Button
-                  type="primary"
-                  className="width-100"
-                  onClick={() => setReverse(!reverse)}
-                >
-                  {<MenuUnfoldOutlined />} REVERSE
-                </Button>
-              </div>
-            </Card>
-          </Col>
-        </Row> */}
+          </Col> */}
+        {/* </Row> */}
 
         {/* <Row gutter={[24, 0]}>
           <Col xs={24} md={12} sm={24} lg={12} xl={14} className="mb-24">

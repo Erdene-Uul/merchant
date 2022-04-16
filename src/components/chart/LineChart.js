@@ -11,38 +11,71 @@
 */
 
 import ReactApexChart from "react-apexcharts";
-import { Typography } from "antd";
+import { Typography, Tabs } from "antd";
 import { MinusOutlined } from "@ant-design/icons";
 import lineChart from "./configs/lineChart";
+
+const { TabPane } = Tabs;
 
 function LineChart() {
   const { Title, Paragraph } = Typography;
 
   return (
     <>
-      <div className="linechart">
-        <div>
-          <Title level={5}>Active Users</Title>
-          <Paragraph className="lastweek">
-            than last week <span className="bnb2">+30%</span>
-          </Paragraph>
-        </div>
-        <div className="sales">
-          <ul>
-            <li>{<MinusOutlined />} Traffic</li>
-            <li>{<MinusOutlined />} Sales</li>
-          </ul>
-        </div>
-      </div>
+      <Tabs defaultActiveKey="1">
+        <TabPane tab="TAB 1" key={1}>
+          <div>
+            <div className="linechart">
+              <div>
+                <Title level={5}>Гүйлгээний мэдээлэл</Title>
+                <Paragraph className="lastweek">
+                  өнгөрсөн долоо хоногоос <span className="bnb2">+30%</span>
+                </Paragraph>
+              </div>
+              {/* <div className="sales">
+                <ul>
+                  <li>{<MinusOutlined />} Traffic</li>
+                  <li>{<MinusOutlined />} Sales</li>
+                </ul>
+              </div> */}
+            </div>
 
-      <ReactApexChart
-        className="full-width"
-        options={lineChart.options}
-        series={lineChart.series}
-        type="area"
-        height={350}
-        width={"100%"}
-      />
+            <ReactApexChart
+              className="full-width"
+              options={lineChart.options}
+              series={lineChart.series[0]}
+              type="area"
+              height={350}
+              width={"100%"}
+            />
+          </div>
+        </TabPane>
+        <TabPane tab="TAB 2" key={2}>
+          <div className="linechart">
+            <div>
+              <Title level={5}>Гүйлгээний мэдээлэл</Title>
+              <Paragraph className="lastweek">
+                өнгөрсөн долоо хоногоос <span className="bnb2">+30%</span>
+              </Paragraph>
+            </div>
+            {/* <div className="sales">
+              <ul>
+                <li>{<MinusOutlined />} Traffic</li>
+                <li>{<MinusOutlined />} Sales</li>
+              </ul>
+            </div> */}
+          </div>
+
+          <ReactApexChart
+            className="full-width"
+            options={lineChart.options}
+            series={lineChart.series[1]}
+            type="area"
+            height={350}
+            width={"100%"}
+          />
+        </TabPane>
+      </Tabs>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, Button } from "antd";
+import { Checkbox } from "antd";
 
 export default function TimeCheckbox({ action }) {
   const options = [
